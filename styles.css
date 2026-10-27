@@ -1,0 +1,326 @@
+/* ── PubMed Data Linker — styles.css ─────────────────────────────────────── */
+
+/* Wrapper injected before h1 on PubMed, after actions bar on PMC */
+#pdl-wrapper {
+  margin: 12px 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 14px;
+  /* Sticky on PubMed so button stays visible while scrolling */
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: #fff;
+  padding: 6px 0 4px 0;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+/* ── Button ──────────────────────────────────────────────────────────────── */
+#pdl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  background-color: #205493;   /* NCBI/PubMed navy */
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
+}
+
+#pdl-btn:hover {
+  background-color: #1a4275;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+#pdl-btn:disabled {
+  background-color: #7a9bbf;
+  cursor: not-allowed;
+}
+
+#pdl-btn.pdl-btn--active {
+  background-color: #1a4275;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ── Results panel ───────────────────────────────────────────────────────── */
+#pdl-panel {
+  margin-top: 8px;
+  padding: 12px 16px;
+  background: #f8f9fa;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  max-width: 520px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  animation: pdl-fadein 0.15s ease;
+}
+
+@keyframes pdl-fadein {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Count line */
+.pdl-count {
+  margin: 0 0 10px 0;
+  font-weight: 600;
+  color: #24292f;
+}
+
+/* Category header */
+.pdl-category {
+  margin: 10px 0 4px 0;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #57606a;
+  border-bottom: 1px solid #d0d7de;
+  padding-bottom: 3px;
+}
+
+/* Link list */
+.pdl-list {
+  list-style: none;
+  margin: 0 0 6px 0;
+  padding: 0;
+}
+
+.pdl-item {
+  margin: 5px 0;
+}
+
+.pdl-item a {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  transition: background-color 0.1s ease, border-color 0.1s ease;
+}
+
+.pdl-item a:hover {
+  background-color: #eaf0fb;
+  border-color: #205493;
+}
+
+.pdl-provider {
+  font-weight: 600;
+  color: #205493;
+  font-size: 13px;
+}
+
+.pdl-url {
+  font-size: 11px;
+  color: #57606a;
+  margin-top: 2px;
+  word-break: break-all;
+}
+
+/* Section title (Data & Databases / Other) */
+.pdl-section-title {
+  margin: 8px 0 4px 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: #24292f;
+}
+
+/* Collapsible "Other links" disclosure */
+.pdl-other {
+  margin-top: 10px;
+  border-top: 1px solid #d0d7de;
+  padding-top: 6px;
+}
+
+.pdl-other summary {
+  font-size: 12px;
+  color: #57606a;
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+}
+
+.pdl-other summary::before {
+  content: "▶ ";
+  font-size: 10px;
+}
+
+.pdl-other[open] summary::before {
+  content: "▼ ";
+}
+
+/* Empty / error states */
+.pdl-empty,
+.pdl-error {
+  margin: 0;
+  color: #57606a;
+  line-height: 1.5;
+}
+
+.pdl-error {
+  color: #cf222e;
+}
+
+/* ── NCBI Datasets section ───────────────────────────────────────────────── */
+
+.pdl-datasets-intro {
+  margin: 4px 0 8px 0;
+  font-size: 12px;
+  color: #57606a;
+  line-height: 1.5;
+}
+
+.pdl-datasets-intro a {
+  color: #205493;
+  text-decoration: none;
+}
+
+.pdl-datasets-intro a:hover {
+  text-decoration: underline;
+}
+
+.pdl-cmd-block {
+  margin: 8px 0 12px 0;
+  padding: 10px 12px;
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 4px;
+}
+
+.pdl-cmd-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #57606a;
+  margin-bottom: 4px;
+  margin-top: 8px;
+}
+
+.pdl-cmd-block .pdl-cmd-label:first-child {
+  margin-top: 0;
+}
+
+.pdl-cmd-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.pdl-cmd {
+  flex: 1;
+  display: block;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 11px;
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  border-radius: 3px;
+  padding: 5px 8px;
+  color: #24292f;
+  word-break: break-all;
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+.pdl-cmd--url {
+  color: #0550ae;
+}
+
+/* Copy button */
+.pdl-copy-btn {
+  flex-shrink: 0;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  background: #f6f8fa;
+  color: #24292f;
+  border: 1px solid #d0d7de;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.1s ease, color 0.1s ease;
+  white-space: nowrap;
+}
+
+.pdl-copy-btn:hover {
+  background: #e7eff8;
+  border-color: #205493;
+  color: #205493;
+}
+
+.pdl-copy-btn--done {
+  background: #dafbe1;
+  border-color: #2da44e;
+  color: #2da44e;
+}
+
+/* Warning banner for large BioProjects */
+.pdl-warning {
+  margin: 8px 0;
+  padding: 8px 12px;
+  background: #fff8c5;
+  border: 1px solid #d4a72c;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #633c01;
+  line-height: 1.5;
+}
+
+.pdl-warning code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 11px;
+  background: #fef3cd;
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+
+/* Download script button — full-width, slightly more prominent */
+/* "Copy all IDs" button — inline next to the accession count */
+.pdl-copy-all-btn {
+  margin-left: 8px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.pdl-script-btn {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 7px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  background: #f6f8fa;
+  color: #205493;
+  border: 1px solid #205493;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.1s ease;
+}
+
+.pdl-script-btn:hover {
+  background: #e7eff8;
+}
+
+/* Footer */
+.pdl-footer {
+  margin: 10px 0 0 0;
+  font-size: 11px;
+  color: #8c959f;
+  text-align: right;
+}
+
+.pdl-footer a {
+  color: #205493;
+  text-decoration: none;
+}
+
+.pdl-footer a:hover {
+  text-decoration: underline;
+}

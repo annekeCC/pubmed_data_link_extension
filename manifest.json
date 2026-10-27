@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "PubMed Data Linker",
+  "version": "1.5.3",
+  "description": "Adds a 'Find Data' button to PubMed and PMC article pages. Scans PMC full text for 25 data accession types and generates NCBI Datasets CLI commands and a combined download script.",
+  "permissions": [],
+  "host_permissions": [
+    "https://pubmed.ncbi.nlm.nih.gov/*",
+    "https://pmc.ncbi.nlm.nih.gov/*",
+    "https://eutils.ncbi.nlm.nih.gov/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://pubmed.ncbi.nlm.nih.gov/*",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16":  "icons/icon16.png",
+    "48":  "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "pubmed-data-linker@extension",
+      "strict_min_version": "109.0"
+    }
+  }
+}

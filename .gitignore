@@ -1,0 +1,20 @@
+# Packaged builds
+*.zip
+*.xpi
+*.crx
+*.pem
+
+# Node / build output (if a toolchain is added later)
+node_modules/
+dist/
+build/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local tool settings
+.claude/settings.local.json
