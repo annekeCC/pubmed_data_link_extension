@@ -5,6 +5,8 @@ A browser extension (Manifest V3, Chrome / Edge / Brave / Firefox) that adds a *
 - **[INSTALL.md](INSTALL.md)** — installation, usage, test articles, privacy notes
 - **[DATA_GUIDE.md](DATA_GUIDE.md)** — reference for every detected data type and how to download it
 
+This project was built using Biomni.
+
 ## Files
 
 | Path | Purpose |
